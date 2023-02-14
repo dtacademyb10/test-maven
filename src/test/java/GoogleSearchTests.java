@@ -11,7 +11,7 @@ public class GoogleSearchTests {
 
 
 
-    @Test
+    @Test  //makes this method a runnable test case
     public void testGoogleSearchResultsPageTitle(){
 
 
@@ -30,7 +30,8 @@ public class GoogleSearchTests {
         String actualTitle = driver.getTitle()+"vdbh";// returns the title of the current page
 
 
-        Assert.assertEquals(actualTitle, expectedTitle);
+        Assert.assertEquals(actualTitle, expectedTitle);  // compares the actual with the expected and throws error if not equal
+        // and marks the test method as failure
 
 
     }
@@ -55,6 +56,23 @@ public class GoogleSearchTests {
 
 
         Assert.assertEquals(actualTitle, expectedTitle);
+
+
+    }
+
+    @Test
+    public void demoAssertionMethods(){
+
+//        Assert.assertNotEquals("hello", "Hello");
+//        Assert.assertTrue("Hello".contains("hi"));
+//        Assert.assertFalse("Hello".contains("hi"));
+
+
+//        Assert.assertEquals("vdhbf", null);
+//        Assert.assertNull(null);
+        Assert.assertNotNull(null);
+
+//        System.out.println("Hello");
 
 
     }
