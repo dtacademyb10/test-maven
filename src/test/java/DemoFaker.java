@@ -1,6 +1,6 @@
 import com.github.javafaker.Faker;
 
-public class DEmoFaker {
+public class DemoFaker {
 
 
     public static void main(String[] args) {
