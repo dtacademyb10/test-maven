@@ -32,7 +32,7 @@ public class SeleniumDemo {
             System.out.println("TEST FAILED. The current title is " + actualTitle + " The expected was " + expectedTitle );
         }
 
-
+      // New line added
 
     }
 }
