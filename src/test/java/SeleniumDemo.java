@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 
 public class SeleniumDemo {
 
@@ -24,15 +25,19 @@ public class SeleniumDemo {
 
         // In the results page, verify the title contains the search term
 
-        String actualTitle = driver.getTitle() + "BCDJH";// returns the title of the current page
+        String actualTitle = driver.getTitle();// returns the title of the current page
 
-        if(actualTitle.equals(expectedTitle)){
-            System.out.println("TEST PASSED.");
-        }else {
-            System.out.println("TEST FAILED. The current title is " + actualTitle + " The expected was " + expectedTitle );
-        }
+//        if(actualTitle.equals(expectedTitle)){
+//            System.out.println("TEST PASSED.");
+//        }else {
+//            System.out.println("TEST FAILED. The current title is " + actualTitle + " The expected was " + expectedTitle );
+//        }
 
-      // New line added
+
+        Assert.assertEquals(actualTitle, expectedTitle);
+
 
     }
+
+
 }
