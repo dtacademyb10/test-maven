@@ -52,9 +52,7 @@ public class WebTables2 {
     public static List<String> getRowValues(WebDriver driver, int rowNo){
         List<String> newList =  new ArrayList<>();
 
-        String myXpath = "//table[@class='SampleTable']//tr["+(rowNo+1)+"]/td";
-
-        System.out.println(myXpath);
+        String myXpath = "//table[@class='SampleTable']//tr["+(rowNo+1)+"]/td"; // rowNo+1 -> to adjust the row number to actual xpath index
 
         for (WebElement e: driver.findElements(By.xpath(myXpath))){
             newList.add(e.getText());
