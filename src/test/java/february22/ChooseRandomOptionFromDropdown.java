@@ -1,4 +1,4 @@
-package februsry22;
+package february22;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Random;
 
-public class RadioButton {
+public class ChooseRandomOptionFromDropdown {
 
 
 
@@ -31,14 +31,11 @@ public class RadioButton {
         driver.findElement(By.xpath("//a[@href='Process.aspx']")).click();
 
 
-//         driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1")).click();
 
-         // Randomly
-
-        List<WebElement> elements = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_fmwOrder_cardList']//input[@type='radio']"));
-
-        elements.get(new Random().nextInt(elements.size())).click();
-
+        Select sel = new Select(driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
+        List<WebElement> allOptions = sel.getOptions();
+        sel.selectByVisibleText( allOptions.get(new Random().nextInt(allOptions.size())).getText() );
+//        sel.selectByIndex( new Random().nextInt(allOptions.size()) ); // alternatively
 
 
 

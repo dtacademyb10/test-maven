@@ -1,4 +1,4 @@
-package februsry22;
+package february22;
 
 public class CheckboxesRadioButtons {
 

@@ -1,4 +1,4 @@
-package februsry22;
+package february22;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
