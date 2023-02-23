@@ -35,12 +35,19 @@ public class CSSSelectors {
         // input.inputtext._55r1._6luy -> input element with multiple classes
 
 
-        // Using an id -< in css id is #
+        // Using an id -> in css id is #
         // input#email -> input element with an id 'email'
-        //#email -> any element with an id email
+        //#email -> any element with an id 'email'
+
+
+
 
 
         driver.findElement(By.cssSelector("#email")).sendKeys("email@gmail.com");
+
+
+        //Using an attribute in css   ->   input[placeholder='Password']
+        //Xpath
 //        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("pass");
         driver.findElement(By.cssSelector("input[placeholder='Password']")).sendKeys("pass123");
 
