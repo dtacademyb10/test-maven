@@ -4,14 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.Random;
 
-public class ChooseRandomOptionFromDropdown {
+public class Checkboxes {
 
 
 
@@ -29,14 +27,31 @@ public class ChooseRandomOptionFromDropdown {
         driver.findElement(By.name("ctl00$MainContent$password")).sendKeys(password);
         driver.findElement(By.name("ctl00$MainContent$login_button")).click();
         Thread.sleep(500);
-        driver.findElement(By.xpath("//a[@href='Process.aspx']")).click();
+        driver.findElement(By.linkText("View all orders")).click();
 
 
 
-        Select sel = new Select(driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
-        List<WebElement> allOptions = sel.getOptions();
-        sel.selectByVisibleText( allOptions.get(new Random().nextInt(allOptions.size())).getText() );
-//        sel.selectByIndex( new Random().nextInt(allOptions.size()) ); // alternatively
+
+        List<WebElement> elements = driver.findElements(By.xpath("//table//input[@type='checkbox']"));
+
+//     Check on the last checkbox
+
+        // Before clicking on a checkbox, check is it is NOT selected already since clicking twice will uncheck it
+//        WebElement lastCheckbox = elements.get(elements.size() - 1);
+//
+//        if(!lastCheckbox.isSelected()){ //Determine whether this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons
+//            lastCheckbox.click();
+//        }
+
+        for (WebElement checkbox : elements) {
+            if(!checkbox.isSelected()){
+                checkbox.click();
+            }
+        }
+
+
+
+
 
 
 

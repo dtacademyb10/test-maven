@@ -5,13 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.Random;
 
-public class ChooseRandomOptionFromDropdown {
+public class RadioButton {
 
 
 
@@ -32,11 +31,14 @@ public class ChooseRandomOptionFromDropdown {
         driver.findElement(By.xpath("//a[@href='Process.aspx']")).click();
 
 
+//         driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1")).click();
 
-        Select sel = new Select(driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
-        List<WebElement> allOptions = sel.getOptions();
-        sel.selectByVisibleText( allOptions.get(new Random().nextInt(allOptions.size())).getText() );
-//        sel.selectByIndex( new Random().nextInt(allOptions.size()) ); // alternatively
+         // Randomly
+
+        List<WebElement> elements = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_fmwOrder_cardList']//input[@type='radio']"));
+
+        elements.get(new Random().nextInt(elements.size())).click();
+
 
 
 
