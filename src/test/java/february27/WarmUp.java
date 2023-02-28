@@ -66,6 +66,7 @@ public class WarmUp {
 
         List<Integer> original =  new ArrayList<>();
 
+        // $210,300 -> 210300
         for (WebElement price : prices) {
             System.out.println(price.getText());
             System.out.println(price.getText().replaceAll("[$,]", ""));
@@ -94,8 +95,8 @@ public class WarmUp {
         List<Integer> originalMiles =  new ArrayList<>();
 
 
-        // 290,000 mi.
-        // 32,456 mi
+        // 290,000 mi.  -> 290000
+        // 32,456 mi    -> 32456
         for (WebElement miles : mileages) {
             String text = miles.getText();
             originalMiles.add(Integer.parseInt(text.substring(0, text.indexOf(" ")).replace(",", "")));
