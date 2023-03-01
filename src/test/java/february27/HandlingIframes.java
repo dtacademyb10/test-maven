@@ -25,10 +25,10 @@ public class HandlingIframes {
 
         //switch the driver's context to an iframe
 
-//        driver.switchTo().frame(0); //switches to the first ifame on the page
-//        driver.switchTo().frame("idOrName");
+//        driver.switchTo().frame(0); //switches to the first iframe on the page
+//        driver.switchTo().frame("idOrName"); //uses id or name of an iframe
         WebElement iframeElement = driver.findElement(By.xpath("//iframe[starts-with(@id, '167')]"));
-        driver.switchTo().frame(iframeElement);
+        driver.switchTo().frame(iframeElement); //switches by the iframe as Webelement
 
         driver.findElement(By.xpath("//input[@placeholder='First']")).sendKeys("Erick");
 
