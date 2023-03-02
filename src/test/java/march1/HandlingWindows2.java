@@ -80,10 +80,10 @@ public class HandlingWindows2 {
 
     public static void switchToWindow(String title, WebDriver driver){
 
-        for (String windowHandle : driver.getWindowHandles()) {
-            driver.switchTo().window(windowHandle);  //switch to a window
+        for (String windowHandle : driver.getWindowHandles()) { // get all window handles in to a set and iterate through the set
+            driver.switchTo().window(windowHandle);  //switch to a window using its handle
             if(driver.getTitle().equals(title)){  //check the title
-                break; // stay in the current page
+                break; // if the title is as expected, stay in the current page
             }
         }
     }
