@@ -1,13 +1,14 @@
 package march1;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
+import java.util.UUID;
 
 public class SeleniumUtilities {
 
@@ -37,5 +38,15 @@ public class SeleniumUtilities {
 
     public static void scrollTillElement(WebDriver driver, WebElement element ){
         ((JavascriptExecutor)driver).executeScript("window.scrollBy(0,"+element.getLocation().getY()+")");
+    }
+
+
+    public static void takeScreenshot(WebDriver driver, String nameOFFile){
+        byte[] screenshotAsFiles = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        try {
+            Files.write(Path.of(nameOFFile),screenshotAsFiles);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
