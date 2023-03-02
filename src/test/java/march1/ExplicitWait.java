@@ -44,6 +44,7 @@ public class ExplicitWait {
 
         // Fluent Wait is a variation of an explicit wait where you can configure
         // the polling frequency and ignore exceptions while waiting
+        // It is rarely used but need to be known for interview purposes
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(5))
                 .pollingEvery(Duration.ofSeconds(2))
