@@ -25,21 +25,21 @@ public class TakeScreenshotDemo {
 
         driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester", Keys.TAB, "test1", Keys.ENTER);
 
+        // if assertion fails, take a screenshot
         try{
             Assert.assertEquals(driver.getCurrentUrl(), "http://secure.smartbearsoftware.com/samples/testcomplete12/weborders/");
         }catch (AssertionError e){
 //            byte[] screenshotAsFiles = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-//            Files.write(Path.of("screenshot"+ UUID.randomUUID()+".png"),screenshotAsFiles);
+//            Files.write(Path.of("screenshot.png"),screenshotAsFiles);
             SeleniumUtilities.takeScreenshot(driver, "src/test/java/march1/screenshots/image.jpeg");
-            throw e;
+            throw e; //re-throw the error so that this test's status will be failed
         }
 
 
-        // if assertion fails take a screenshot
 
 
-        // To get a unique value in Java use either System.currenttimemillis()
-        //  or UUID.randomUUID() methods
+
+        // To get a unique value in Java use either System.currenttimemillis() or UUID.randomUUID() methods
 
 
 
