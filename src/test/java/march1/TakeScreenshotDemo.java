@@ -6,12 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.Duration;
-import java.util.UUID;
 
-public class TakeScreenshorDemo {
+public class TakeScreenshotDemo {
 
 
 
