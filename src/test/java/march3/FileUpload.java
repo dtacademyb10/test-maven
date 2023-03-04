@@ -17,16 +17,17 @@ public class FileUpload {
         driver.get("https://the-internet.herokuapp.com/upload");
 
 
-        // relative path does not work, need to provide absolute path
+        // relative path here does not work, need to provide absolute path
 
         //To obtain the path to the current project's folder, Use System.getProperty("user.dir")
+
 //        String pathTotheCurrentProject = System.getProperty("user.dir");
 //        System.out.println(pathTotheCurrentProject);
 
         String absolutePathDynamic = System.getProperty("user.dir") + "/src/test/java/march3/chat.txt";
 
         System.out.println(absolutePathDynamic);
-        //C:\Users\\username\IdeaProjects\test-maven/src/test/java/march3/chat.txt
+        //C:\Users\Username\IdeaProjects\test-maven/src/test/java/march3/chat.txt
 
         driver.findElement(By.id("file-upload")).sendKeys(absolutePathDynamic);
 
